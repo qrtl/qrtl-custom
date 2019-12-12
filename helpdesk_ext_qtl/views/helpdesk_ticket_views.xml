@@ -9,6 +9,9 @@
             <xpath expr="//field[@name='user_id']" position="before">
                 <field name="ticket_deadline"/>
             </xpath>
+            <xpath expr="//field[@name='name']" position="before">
+                <field name="id"/>
+            </xpath>
         </field>
     </record>
 
