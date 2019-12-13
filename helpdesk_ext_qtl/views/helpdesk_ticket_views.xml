@@ -6,11 +6,11 @@
         <field name="model">helpdesk.ticket</field>
         <field name="inherit_id" ref="helpdesk.helpdesk_tickets_view_tree"/>
         <field name="arch" type="xml">
+            <xpath expr="//field[@name='display_name']" position="before">
+                <field name="id"/>
+            </xpath>
             <xpath expr="//field[@name='user_id']" position="before">
                 <field name="ticket_deadline"/>
-            </xpath>
-            <xpath expr="//field[@name='name']" position="before">
-                <field name="id"/>
             </xpath>
         </field>
     </record>
