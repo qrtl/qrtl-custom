@@ -1,6 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
+     <record id="view_task_tree2" model="ir.ui.view">
+        <field name="name">project.task.tree</field>
+        <field name="model">project.task</field>
+        <field name="inherit_id" ref="project.view_task_tree2"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']" position="before">
+                <field name="id"/>
+            </xpath>
+            <xpath expr="//field[@name='name']" position="after">
+                <field name="partner_id"/>
+                <field name="date_deadline"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_task_form2">
+        <field name="name">project.task.code.form</field>
+        <field name="model">project.task</field>
+        <field name="inherit_id" ref="project.view_task_form2"/>
+        <field name="arch" type="xml">
+            <xpath expr="//button[@name='action_assign_to_me']" position="before">
+                <button name="%(project.action_view_task)d" string="View Tasks" type="action"/>
+            </xpath>
+            <field name="name" position="after">
+                <span class="oe_inline">(#<field name="id" class="oe_inline"/>)</span>
+            </field>
+            <field name="partner_id" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </field>
+            <field name="date_start" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </field>
+            <field name="date_end" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </field>
+            <field name="date_deadline" position="before">
+                <field name="partner_id"/>
+                <field name="date_start"/>
+                <field name="date_end"/>
+            </field>
+        </field>
+    </record>
+
     <record id="view_task_search_form" model="ir.ui.view">
         <field name="name">project.task.search.form</field>
         <field name="model">project.task</field>
