@@ -1,11 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
+    <record model="ir.ui.view" id="view_task_kanban">
+        <field name="name">project.task.kanban</field>
+        <field name="model">project.task</field>
+        <field name="inherit_id" ref="project.view_task_kanban"/>
+        <field name="arch" type="xml">
+            <!-- can't use normal name reference in kanban view.
+            below lines are to show display_name instead of name -->
+            <xpath expr="//kanban/templates/t/div/div/div/div/strong/field" position="before">
+                <field name="display_name"/>
+            </xpath>
+            <xpath expr="//kanban/templates/t/div/div/div/div/strong/field" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+        </field>
+    </record>
+
      <record id="view_task_tree2" model="ir.ui.view">
         <field name="name">project.task.tree</field>
         <field name="model">project.task</field>
         <field name="inherit_id" ref="project.view_task_tree2"/>
         <field name="arch" type="xml">
+            <xpath expr="//tree" position="attributes">
+                <attribute name="default_order">id desc</attribute>
+            </xpath>
             <xpath expr="//field[@name='name']" position="before">
                 <field name="id"/>
             </xpath>
@@ -25,7 +44,7 @@
                 <button name="%(project.action_view_task)d" string="View Tasks" type="action"/>
             </xpath>
             <field name="name" position="after">
-                <span class="oe_inline">(#<field name="id" class="oe_inline"/>)</span>
+                <span class="oe_inline"> (#<field name="id" class="oe_inline"/>)</span>
             </field>
             <field name="partner_id" position="attributes">
                 <attribute name="invisible">1</attribute>
