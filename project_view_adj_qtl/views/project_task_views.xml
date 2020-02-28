@@ -1,18 +1,24 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <odoo>
 
     <record model="ir.ui.view" id="view_task_kanban">
         <field name="name">project.task.kanban</field>
         <field name="model">project.task</field>
-        <field name="inherit_id" ref="project.view_task_kanban"/>
+        <field name="inherit_id" ref="project.view_task_kanban" />
         <field name="arch" type="xml">
             <!-- can't use normal name reference in kanban view.
             below lines are to show display_name instead of name -->
-            <xpath expr="//kanban/templates/t/div/div/div/div/strong/field" position="attributes">
+            <xpath
+                expr="//kanban/templates/t/div/div/div/div/strong/field"
+                position="attributes"
+            >
                 <attribute name="invisible">1</attribute>
             </xpath>
-            <xpath expr="//kanban/templates/t/div/div/div/div/strong/field" position="after">
-                <field name="display_name"/>
+            <xpath
+                expr="//kanban/templates/t/div/div/div/div/strong/field"
+                position="after"
+            >
+                <field name="display_name" />
             </xpath>
         </field>
     </record>
@@ -20,17 +26,17 @@
      <record id="view_task_tree2" model="ir.ui.view">
         <field name="name">project.task.tree</field>
         <field name="model">project.task</field>
-        <field name="inherit_id" ref="project.view_task_tree2"/>
+        <field name="inherit_id" ref="project.view_task_tree2" />
         <field name="arch" type="xml">
             <xpath expr="//tree" position="attributes">
                 <attribute name="default_order">id desc</attribute>
             </xpath>
             <xpath expr="//field[@name='name']" position="before">
-                <field name="id"/>
+                <field name="id" />
             </xpath>
             <xpath expr="//field[@name='name']" position="after">
-                <field name="partner_id"/>
-                <field name="date_deadline"/>
+                <field name="partner_id" />
+                <field name="date_deadline" />
             </xpath>
         </field>
     </record>
@@ -38,13 +44,17 @@
     <record model="ir.ui.view" id="view_task_form2">
         <field name="name">project.task.code.form</field>
         <field name="model">project.task</field>
-        <field name="inherit_id" ref="project.view_task_form2"/>
+        <field name="inherit_id" ref="project.view_task_form2" />
         <field name="arch" type="xml">
             <xpath expr="//button[@name='action_assign_to_me']" position="before">
-                <button name="%(project.action_view_task)d" string="View Tasks" type="action"/>
+                <button
+                    name="%(project.action_view_task)d"
+                    string="View Tasks"
+                    type="action"
+                />
             </xpath>
             <field name="name" position="after">
-                <span class="oe_inline"> (#<field name="id" class="oe_inline"/>)</span>
+                <span class="oe_inline"> (#<field name="id" class="oe_inline" />)</span>
             </field>
             <field name="partner_id" position="attributes">
                 <attribute name="invisible">1</attribute>
@@ -59,12 +69,12 @@
                 <attribute name="invisible">1</attribute>
             </field>
             <field name="date_deadline" position="before">
-                <field name="partner_id"/>
-                <field name="date_start"/>
-                <field name="date_end"/>
+                <field name="partner_id" />
+                <field name="date_start" />
+                <field name="date_end" />
             </field>
             <field name="user_id" position="after">
-                <field name="parent_id"/>
+                <field name="parent_id" />
             </field>
         </field>
     </record>
@@ -72,20 +82,31 @@
     <record id="view_task_search_form" model="ir.ui.view">
         <field name="name">project.task.search.form</field>
         <field name="model">project.task</field>
-        <field name="inherit_id" ref="project.view_task_search_form"/>
+        <field name="inherit_id" ref="project.view_task_search_form" />
         <field name="arch" type="xml">
             <xpath expr="//filter[@name='unassigned']" position="after">
-                <separator/>
-                <filter string="Draft" name="draft" domain="[('state','=','draft')]"/>
-                <filter string="Open" name="open" domain="[('state','=','open')]"/>
-                <filter string="Pending" name="pending" domain="[('state','=','pending')]"/>
-                <filter string="Done" name="done" domain="[('state','=','done')]"/>
-                <filter string="Cancelled" name="cancelled" domain="[('state','=','cancelled')]"/>
+                <separator />
+                <filter string="Draft" name="draft" domain="[('state','=','draft')]" />
+                <filter string="Open" name="open" domain="[('state','=','open')]" />
+                <filter
+                    string="Pending"
+                    name="pending"
+                    domain="[('state','=','pending')]"
+                />
+                <filter string="Done" name="done" domain="[('state','=','done')]" />
+                <filter
+                    string="Cancelled"
+                    name="cancelled"
+                    domain="[('state','=','cancelled')]"
+                />
             </xpath>
         </field>
     </record>
 
-    <record id="project.act_project_project_2_project_task_all" model="ir.actions.act_window">
+    <record
+        id="project.act_project_project_2_project_task_all"
+        model="ir.actions.act_window"
+    >
         <field name="context">{
             'search_default_project_id': [active_id],
             'default_project_id': active_id,
