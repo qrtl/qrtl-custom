@@ -8,8 +8,6 @@
     "license": "AGPL-3",
     "website": "https://www.quartile.co",
     "category": "Project",
-    "description": """
-    """,
     "data": ["views/project_task_views.xml"],
     "installable": True,
 }
