@@ -8,8 +8,6 @@
     "license": "AGPL-3",
     "website": "https://www.quartile.co",
     "category": "HR",
-    "description": """
-    """,
     "data": ["views/hr_timesheet_views.xml"],
     "installable": True,
 }
