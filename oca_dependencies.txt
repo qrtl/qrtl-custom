@@ -18,4 +18,5 @@
 # commit SHA to select:
 # sale-workflow https://github.com/OCA/sale-workflow branchname f848e37
 
-enterprise git@github.com:odoo/enterprise.git 12.0
+#enterprise git@github.com:odoo/enterprise.git 12.0
+enterprise https://github.com/odoo/enterprise 12.0
