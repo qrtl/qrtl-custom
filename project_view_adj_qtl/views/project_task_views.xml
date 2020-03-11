@@ -42,7 +42,7 @@
     </record>
 
     <record model="ir.ui.view" id="view_task_form2">
-        <field name="name">project.task.code.form</field>
+        <field name="name">project.task.form</field>
         <field name="model">project.task</field>
         <field name="inherit_id" ref="project.view_task_form2" />
         <field name="arch" type="xml">
@@ -57,12 +57,6 @@
                 <span class="oe_inline"> (#<field name="id" class="oe_inline" />)</span>
             </field>
             <field name="partner_id" position="attributes">
-                <attribute name="invisible">1</attribute>
-            </field>
-            <field name="date_start" position="attributes">
-                <attribute name="invisible">1</attribute>
-            </field>
-            <field name="date_end" position="attributes">
                 <attribute name="invisible">1</attribute>
             </field>
             <field name="parent_id" position="attributes">
