@@ -21,9 +21,7 @@ exclude: |
   l10n_jp_address_layout/|
   l10n_jp_country_state/|
   l10n_jp_partner_title_qweb/|
-  partner_category_hierarchy/|
   project_stage_state/|
-  project_task_code/|
   project_task_default_stage/|
   project_task_dependency/|
   project_timeline/|
