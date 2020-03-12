@@ -21,21 +21,15 @@ exclude: |
   l10n_jp_address_layout/|
   l10n_jp_country_state/|
   l10n_jp_partner_title_qweb/|
-  partner_category_hierarchy/|
   project_stage_state/|
-  project_task_code/|
   project_task_default_stage/|
   project_task_dependency/|
   project_timeline/|
   project_timeline_task_dependency/|
-  theme_clean/|
-  theme_common/|
   web_m2x_options/|
   web_timeline/|
-  website_animate/|
   website_cookie_notice/|
   website_crm_privacy_policy/|
-  website_forum_visibility/|
   website_legal_page/|
   website_no_crawler/
 default_language_version:
