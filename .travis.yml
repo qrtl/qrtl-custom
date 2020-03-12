@@ -22,8 +22,6 @@ jobs:
     install: pip install pre-commit
     script: pre-commit run --all --show-diff-on-failure --verbose --color always
     after_success: 
-    # before_install: 
-    # - echo -e "machine github.com\n  login $CI_USER_TOKEN" > ~/.netrc
   - stage: test
     env:
     - TESTS="1" ODOO_REPO="odoo/odoo" MAKEPOT="1"
@@ -50,5 +48,3 @@ script:
 - travis_run_tests
 after_success:
 - travis_after_tests_success
-# CI_USER_TOKEN:
-#   secure: Qk0llBslFh2ubclYMzbodxvRFDql5EYf2u43J6gtK0W1/PuJrXkRUqJ+6ULvrWSj+GLxIp8yR6EBu2ysEAYDbhooWi5xr+MriaFcFVxXsQ3n4ayNIe/bbaCaIWqz6H0R54fyRMiFanq9QAaYaF4d9iiepW/d6knMECpXGCCgWiP0SVxYkj8BVPcRzrvctoWAM5uiCBTFszmI9dvZOzTQZ9gmCjDOmg0NZcoKbRSnd/mYyHib87GK79owtkbYLMfInv2txy1S/XxOAUhuL1h7ShbEpvvbZe8KAZgq8wGhMNNyT7oFoypEovm6KZP7a+QMp/Q0DLyrK2+V88XvKDFz4Z6Wu1P63Z4D/HGXZAYUBSmiNKSJLSqnQAuDnhtZ0fssxbLRdSUgEvgaSZQu03URdSGRRQu+yiyu5uxt4dtyxYBDcPZFx9xStLwBdF4rOiq8E3v+YBrQqMJrXkvdoZhuJPGjXJHa9ONP4EbTfKf42MQOPsodNQIxP04wiyGW3zRkLSvJi8hApXSgxBBiFHBelBVibdkfD57zCCAW4JGxSgFSNvTAfm+UgYVGQh7nfFiVuK+7zs4Hk3h2o8tmeXNRwgp3sbgRt8UU9Y7CrVwcHA4jW9hdaF4hWWIfdn6qUO0EWKqjjwpMsKZC4DJ1XOxIL3qudRyaCZT5HdRIS1lL3EQ=
