@@ -35,6 +35,8 @@
                 <field name="id" />
             </xpath>
             <xpath expr="//field[@name='name']" position="after">
+                <field name="parent_id"/>
+                <field name="tag_ids" widget="many2many_tags"/>
                 <field name="partner_id" />
                 <field name="date_deadline" />
             </xpath>
@@ -78,6 +80,11 @@
         <field name="model">project.task</field>
         <field name="inherit_id" ref="project.view_task_search_form" />
         <field name="arch" type="xml">
+            <field name="name" position="attributes">
+                <attribute name="filter_domain">
+                    ['|', ('name','ilike', self), ('parent_id','ilike', self)]
+                </attribute>
+            </field>
             <xpath expr="//filter[@name='unassigned']" position="after">
                 <separator />
                 <filter string="Draft" name="draft" domain="[('state','=','draft')]" />
