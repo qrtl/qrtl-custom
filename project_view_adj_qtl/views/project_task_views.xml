@@ -82,7 +82,8 @@
         <field name="arch" type="xml">
             <field name="name" position="attributes">
                 <attribute name="filter_domain">
-                    ['|', ('name','ilike', self), ('parent_id','ilike', self)]
+                     ['|', '|', ('name','ilike', self), ('parent_id','ilike',
+                    self), ('id', 'ilike', self)]
                 </attribute>
             </field>
             <xpath expr="//filter[@name='unassigned']" position="after">
