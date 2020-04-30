@@ -72,6 +72,17 @@
             <field name="user_id" position="after">
                 <field name="parent_id" />
             </field>
+            <field name="unit_amount" position="after">
+                <field name="project_id"/>
+                <field name="billability"/>
+                <field name="billability_code" invisible="1"/>
+            </field>
+            
+             <xpath expr="//field[@name='timesheet_ids']" position="attributes">
+                <attribute name="decoration-success">billability_code=='billable'</attribute>
+                <attribute name="decoration-warning">billability_code=='nobill'</attribute>
+            </xpath>
+     
         </field>
     </record>
 
