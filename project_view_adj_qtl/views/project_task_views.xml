@@ -78,7 +78,7 @@
                 <field name="billability_code" invisible="1"/>
             </field>
             
-             <xpath expr="//field[@name='timesheet_ids']" position="attributes">
+             <xpath expr="//field[@name='timesheet_ids']/tree" position="attributes">
                 <attribute name="decoration-success">billability_code=='billable'</attribute>
                 <attribute name="decoration-warning">billability_code=='nobill'</attribute>
             </xpath>
