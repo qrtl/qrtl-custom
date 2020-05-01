@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_follower_default_send_mail_false_follower_default_send_mail_false,follower_default_send_mail_false.follower_default_send_mail_false,model_follower_default_send_mail_false_follower_default_send_mail_false,,1,0,0,0
