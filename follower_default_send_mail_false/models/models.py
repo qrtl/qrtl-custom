@@ -9,6 +9,4 @@ class Invite(models.TransientModel):
 
     send_mail = fields.Boolean(
         default=False,
-        help="If checked, the partners will receive an \
-            email warning they have been added in the document's followers.",
     )
