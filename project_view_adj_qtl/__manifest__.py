@@ -2,7 +2,7 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 {
     "name": "Project View Adj",
-    "version": "12.0.1.1.2",
+    "version": "12.0.1.2.0",
     "depends": ["timesheet_billability", "project_stage_state"],
     "author": "Quartile Limited",
     "license": "AGPL-3",
