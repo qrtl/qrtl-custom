@@ -11,5 +11,5 @@
     "category": "Uncategorized",
     "version": "12.0.0.0.1",
     "depends": ["base", "mail"],
-    "data": ["views/views.xml", "views/templates.xml"],
+    "data": [],
 }
