@@ -1,5 +1,5 @@
-# Copyright 2019-2020 Quartile Limited
-# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
+# Copyright 2020 Quartile Limited
+# License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl).
 {
     "name": "follower_default_send_mail_false",
     "summary": """
