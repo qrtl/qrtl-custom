@@ -106,12 +106,12 @@ repos:
       - id: isort
         name: isort except __init__.py
         exclude: /__init__\.py$
-  - repo: https://github.com/awebdeveloper/pre-commit-prettier
-    rev: v0.0.1
-    hooks:
-      - id: prettier
-        name: prettier xml plugin
-        additional_dependencies:
-          - "prettier@1.19.1"
-          - "@prettier/plugin-xml@0.7.2"
-        files: \.xml$
+#  - repo: https://github.com/awebdeveloper/pre-commit-prettier
+#    rev: v0.0.1
+#    hooks:
+#      - id: prettier
+#        name: prettier xml plugin
+#        additional_dependencies:
+#          - "prettier@1.19.1"
+#          - "@prettier/plugin-xml@0.7.2"
+#        files: \.xml$
