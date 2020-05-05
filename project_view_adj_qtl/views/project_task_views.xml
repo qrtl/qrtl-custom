@@ -35,8 +35,8 @@
                 <field name="id" />
             </xpath>
             <xpath expr="//field[@name='name']" position="after">
-                <field name="parent_id"/>
-                <field name="tag_ids" widget="many2many_tags"/>
+                <field name="parent_id" />
+                <field name="tag_ids" widget="many2many_tags" />
                 <field name="partner_id" />
                 <field name="date_deadline" />
             </xpath>
@@ -73,13 +73,17 @@
                 <field name="parent_id" />
             </field>
             <field name="unit_amount" position="after">
-                <field name="project_id"/>
-                <field name="billability"/>
-                <field name="billability_code" invisible="1"/>
+                <field name="project_id" />
+                <field name="billability" />
+                <field name="billability_code" invisible="1" />
             </field>
              <xpath expr="//field[@name='timesheet_ids']/tree" position="attributes">
-                <attribute name="decoration-success">billability_code=='billable'</attribute>
-                <attribute name="decoration-warning">billability_code=='nobill'</attribute>
+                <attribute
+                    name="decoration-success"
+                >billability_code=='billable'</attribute>
+                <attribute
+                    name="decoration-warning"
+                >billability_code=='nobill'</attribute>
             </xpath>
         </field>
     </record>
