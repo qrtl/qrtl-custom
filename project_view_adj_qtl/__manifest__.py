@@ -3,7 +3,7 @@
 {
     "name": "Project View Adj",
     "version": "12.0.1.2.0",
-    "depends": ["timesheet_billability", "project_stage_state"],
+    "depends": ["project_stage_state"],
     "author": "Quartile Limited",
     "license": "AGPL-3",
     "website": "https://www.quartile.co",
