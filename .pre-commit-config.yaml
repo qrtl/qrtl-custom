@@ -35,6 +35,7 @@ exclude: |
   website_no_crawler/
 default_language_version:
   python: python3
+  node: "14.13.0"
 repos:
   - repo: https://github.com/psf/black
     rev: 19.10b0
