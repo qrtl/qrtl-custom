@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_additional_info_line_tree" model="ir.ui.view">
+        <field name="name">additional.info.line.tree</field>
+        <field name="model">additional.info.line</field>
+        <field name="arch" type="xml">
+            <tree editable="bottom" string="Additional Info Line">
+                <field name="sequence"/>
+                <field name="url" widget="url"/>
+                <field name="remark"/>
+            </tree>
+        </field>
+    </record>
+
+</odoo>
