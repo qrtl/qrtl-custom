@@ -1,0 +1,1 @@
+Inherit additional.info in project.task and show additional_info_ids above 'notebook'. additional.info.line records should be editable.
