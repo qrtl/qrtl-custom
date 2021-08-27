@@ -70,4 +70,10 @@
             </xpath>
         </field>
     </record>
+    <record id="hr_attendance.hr_attendance_action" model="ir.actions.act_window">
+        <field name="inherit_id" ref="hr_attendance.hr_attendance_action"></field>
+        <field name="name">hr_attendance_view_filter</field>
+        <field name="model">hr.attendance</field>
+        <field name="context">{"search_default_myattendances":1}</field>
+    </record>
 </odoo>
