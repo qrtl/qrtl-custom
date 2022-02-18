@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_task_form2" model="ir.ui.view">
+        <field name="name">project.task.form</field>
+        <field name="model">project.task</field>
+        <field name="inherit_id" ref="project.view_task_form2"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+                <page string="Internal Note">
+                    <group>
+                        <group string="Current Status">
+                            <field name="internal_note" />
+                            <field name="not_understand" />
+                        </group>
+                        <group string="Organize information">
+                            <field name="estimate_step_time" />
+                            <field name="problem" />
+                            <field name="solution" />
+                            <field name="test_point" />
+                            <field name="answere_point" />
+                        </group>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>
