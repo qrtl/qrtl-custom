@@ -5,8 +5,9 @@
         <field name="model">project.task</field>
         <field name="inherit_id" ref="project.view_task_form2"/>
         <field name="arch" type="xml">
-            <xpath expr="//notebook/page[@name='description_page']/field[@name='description']" position="after">
+            <xpath expr="//notebook/page[@name='description_page']/field[@name='description']" position="before">
                 <field name="internal_note" />
+                <separator />
             </xpath>
         </field>
     </record>
