@@ -3,10 +3,10 @@
 
 {
     "name": "Add State field to Project Stages",
-    "version": "12.0.1.0.0",
+    "version": "16.0.1.0.0",
     "category": "Project Management",
     "summary": "Restore State attribute removed from Project Stages in 8.0",
-    "author": "Daniel Reis,Odoo Community Association (OCA)",
+    "author": "Daniel Reis,Odoo Community Association (OCA), Quartile Limited",
     "website": "https://www.quartile.co",
     "license": "AGPL-3",
     "installable": True,
