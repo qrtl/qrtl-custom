@@ -6,7 +6,7 @@
         <field name="model">project.project</field>
         <field name="inherit_id" ref="project.edit_project" />
         <field name="arch" type="xml">
-            <field name="company_id" position="after">
+            <field name="tag_ids" position="after">
                 <field name="customer_reply_stage_id" />
             </field>
         </field>

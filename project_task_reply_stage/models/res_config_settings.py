@@ -1,5 +1,5 @@
 # Copyright 2019 Quartile Limited
-# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
+# License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 
 from odoo import api, fields, models
 
@@ -24,10 +24,10 @@ class ResConfigSettings(models.TransientModel):
         )
         return res
 
-    @api.multi
     def set_values(self):
         super(ResConfigSettings, self).set_values()
         self.env["ir.config_parameter"].sudo().set_param(
             "project_task_reply_stage.customer_reply_stage_id",
             self.customer_reply_stage_id.id,
         )
+        return True
