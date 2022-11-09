@@ -5,7 +5,7 @@
     "category": "Project",
     "version": "12.0.1.0.0",
     "author": "Quartile Limited",
-    "website": "https://www.quartile.co/",
+    "website": "https://www.quartile.co",
     "license": "AGPL-3",
     "depends": ["project", "project_stage_state"],
     "data": ["views/project_project_views.xml", "views/res_config_settings_views.xml"],
