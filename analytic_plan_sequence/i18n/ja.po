@@ -1,0 +1,26 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* analytic_plan_sequence
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-11-09 12:12+0000\n"
+"PO-Revision-Date: 2022-11-09 12:12+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: analytic_plan_sequence
+#: model:ir.model,name:analytic_plan_sequence.model_account_analytic_plan
+msgid "Analytic Plans"
+msgstr ""
+
+#. module: analytic_plan_sequence
+#: model:ir.model.fields,field_description:analytic_plan_sequence.field_account_analytic_plan__sequence
+msgid "Sequence"
+msgstr "付番"

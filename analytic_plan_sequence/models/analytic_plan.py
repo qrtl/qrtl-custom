@@ -4,8 +4,8 @@
 from odoo import fields, models
 
 
-class AccountAnalyticGroup(models.Model):
-    _inherit = "account.analytic.group"
+class AccountAnalyticPlan(models.Model):
+    _inherit = "account.analytic.plan"
     _order = "sequence"
 
     sequence = fields.Integer()
