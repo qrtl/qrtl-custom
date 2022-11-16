@@ -6,7 +6,7 @@ on:
       - "16.0*"
   push:
     branches:
-      - "16.0*"
+      - "16.0"
       - "16.0-ocabot-*"
 
 jobs:
