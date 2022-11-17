@@ -2,7 +2,7 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 {
     "name": "Hide timesheet task in portal page",
-    "version": "12.0.1.0.0",
+    "version": "16.0.1.0.0",
     "depends": ["hr_timesheet"],
     "author": "Quartile Limited",
     "license": "AGPL-3",
