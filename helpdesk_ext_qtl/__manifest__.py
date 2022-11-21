@@ -5,7 +5,7 @@
     "category": "Helpdesk",
     "version": "12.0.1.0.1",
     "author": "Quartile Limited",
-    "website": "https://www.quartile.co/",
+    "website": "https://www.quartile.co",
     "license": "AGPL-3",
     "depends": ["helpdesk"],
     "summary": """""",
