@@ -9,9 +9,9 @@
     "version": "16.0.1.0.0",
     "depends": ["account"],
     "data": [
-                "security/ir.model.access.csv",
-                "views/analytic_group_views.xml",
-                "views/analytic_account_views.xml",
-            ],
+        "security/ir.model.access.csv",
+        "views/analytic_group_views.xml",
+        "views/analytic_account_views.xml",
+    ],
     "installable": True,
 }
