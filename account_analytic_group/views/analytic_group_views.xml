@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="account_analytic_group_form_view" model="ir.ui.view">
+        <field name="name">account.analytic.group.form</field>
+        <field name="model">account.analytic.group</field>
+        <field name="arch" type="xml">
+            <form string="Analytic Account Groups">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                    </group>
+                    <group>
+                        <field name="sequence" />
+                        <field name="description"/>
+                        <field name="company_id" groups="base.group_multi_company"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="account_analytic_group_tree_view" model="ir.ui.view">
+        <field name="name">account.analytic.group.tree</field>
+        <field name="model">account.analytic.group</field>
+        <field name="arch" type="xml">
+            <tree string="Analytic Account Groups">
+                <field name="sequence" widget="handle" />
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+    <record id="account_analytic_group_action" model="ir.actions.act_window">
+        <field name="name">Analytic Account Groups</field>
+        <field name="res_model">account.analytic.group</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <menuitem
+        id="account_analytic_group_menu"
+        name="Analytic Account Groups"
+        parent="account.menu_analytic_accounting"
+        action="account_analytic_group_action"
+        groups="analytic.group_analytic_accounting"
+    />
+</odoo>
