@@ -7,6 +7,7 @@ from odoo import fields, models
 class AccountAnalyticGroup(models.Model):
     _name = "account.analytic.group"
     _description = "Analytic Account Group"
+    _order = "sequence, name"
 
     sequence = fields.Integer()
     name = fields.Char(required=True)
