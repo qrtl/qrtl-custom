@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="mail_validation_tree" model="ir.ui.view">
+        <field name="name">mail.validation.tree</field>
+        <field name="model">mail.validation</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="model_id" />
+            </tree>
+        </field>
+    </record>
+    <record id="mail_validation_form" model="ir.ui.view">
+        <field name="name">mail.validation.form</field>
+        <field name="model">mail.validation</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="model_id" />
+                        <field name="domain" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="action_mail_validation" model="ir.actions.act_window">
+        <field name="name">Mail Validation</field>
+        <field name="res_model">mail.validation</field>
+    </record>
+    <menuitem
+        id="menu_mail_validation"
+        name="Mail Validation"
+        parent="base.menu_administration"
+        sequence="20"
+    />
+    <menuitem
+        id="menu_mail_validation_model"
+        action="action_mail_validation"
+        parent="menu_mail_validation"
+        sequence="20"
+    />
+</odoo>
