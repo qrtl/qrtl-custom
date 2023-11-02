@@ -13,8 +13,9 @@
         <field name="name">base.remote.server.tree</field>
         <field name="model">base.remote.server</field>
         <field name="arch" type="xml">
-            <tree string="Remote Server Information" delete="false">
+            <tree>
                 <field name="name" />
+                <field name="partner_id" />
                 <field name="server_ip" />
                 <field name="ssh_port" />
                 <field name="server_url_ids" widget="many2many_tags" />
@@ -26,11 +27,11 @@
         <field name="name">base.remote.server.form</field>
         <field name="model">base.remote.server</field>
         <field name="arch" type="xml">
-            <form string="Server Properties">
+            <form>
                 <header>
                     <button
-                        name="sync_custom_properties"
-                        string="Sync Custom Properties"
+                        name="sync_command_properties"
+                        string="Sync Command Properties"
                         type="object"
                         class="oe_highlight"
                     />
@@ -47,68 +48,46 @@
                     </div>
                     <group>
                         <group>
+                            <field name="partner_id" />
                             <field name="server_ip" />
                             <field name="ssh_user" />
                             <field name="ssh_port" />
                             <field name="private_key_path" />
+                            <field name="remark" />
                         </group>
                     </group>
                     <notebook colspan="4">
-                        <page string="Server Properties">
-                            <group>
-                                <group>
-                                    <!-- <label for="server_url_ids"/> -->
-                                    <field
-                                        name="server_url_ids"
-                                        mode="tree"
-                                        options="{'reload_whole_on_button': true}"
-                                    >
-                                        <tree string="Server URL(s)" editable="bottom">
-                                            <field
-                                                name="base_remote_server_id"
-                                                invisible="1"
-                                            />
-                                            <field name="name" />
-                                            <field name="base_remote_database_id" />
-                                            <field name="valid" />
-                                        </tree>
-                                    </field>
-                                </group>
-                                <group>
-                                    <!-- <label for="database_ids"/> -->
-                                    <field
-                                        name="database_ids"
-                                        mode="tree"
-                                        options="{'reload_whole_on_button': true}"
-                                    >
-                                        <tree string="Database (s)" editable="bottom">
-                                            <field
-                                                name="base_remote_server_id"
-                                                invisible="1"
-                                            />
-                                            <field name="name" />
-                                        </tree>
-                                    </field>
-                                </group>
-                            </group>
+                        <page name="server_properties" string="Server Properties">
+                            <!-- <label for="database_ids"/> -->
+                            <field name="database_ids">
+                                <tree editable="bottom">
+                                    <field name="base_remote_server_id" invisible="1" />
+                                    <field name="name" />
+                                </tree>
+                            </field>
+                            <!-- <label for="server_url_ids"/> -->
+                            <field name="server_url_ids">
+                                <tree editable="bottom">
+                                    <field name="base_remote_server_id" invisible="1" />
+                                    <field name="name" />
+                                    <field name="base_remote_database_id" />
+                                    <field name="valid" />
+                                </tree>
+                            </field>
+                        </page>
+                        <page name="static_properties" string="Static Properties">
                             <label for="server_static_properties_ids" />
-                            <field
-                                name="server_static_properties_ids"
-                                mode="tree"
-                                options="{'reload_whole_on_button': true}"
-                            >
+                            <field name="server_static_properties_ids">
                                 <tree editable="bottom">
                                     <field name="base_remote_server_id" invisible="1" />
                                     <field name="name" />
                                     <field name="property_value" />
                                 </tree>
                             </field>
+                        </page>
+                        <page name="command_properties" string="Command Properties">
                             <label for="server_command_properties_ids" />
-                            <field
-                                name="server_command_properties_ids"
-                                mode="tree"
-                                options="{'reload_whole_on_button': true}"
-                            >
+                            <field name="server_command_properties_ids">
                                 <tree editable="bottom">
                                     <field name="base_remote_server_id" invisible="1" />
                                     <field name="name" />
@@ -126,7 +105,6 @@
     <record id="base_remote_server_action" model="ir.actions.act_window">
         <field name="name">Remote Server Information</field>
         <field name="res_model">base.remote.server</field>
-        <field name="view_type">form</field>
         <field name="view_mode">tree,form</field>
         <field name="context">{}</field>
     </record>

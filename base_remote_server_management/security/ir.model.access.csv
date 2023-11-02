@@ -1,6 +1,6 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_base_remote_database,access_base_remote_database,model_base_remote_database,base.group_user,1,1,1,1
-access_base_remote_server,access_base_remote_server,model_base_remote_server,base.group_user,1,1,1,1
-access_base_remote_url,access_base_remote_url,model_base_remote_url,base.group_user,1,1,1,1
-access_server_command_properties,access_server_command_properties,model_server_command_properties,base.group_user,1,1,1,1
-access_server_static_properties,access_server_static_properties,model_server_static_properties,base.group_user,1,1,1,1
+access_base_remote_database,access_base_remote_database,model_base_remote_database,base.group_user,1,1,1,0
+access_base_remote_server,access_base_remote_server,model_base_remote_server,base.group_user,1,1,1,0
+access_base_remote_url,access_base_remote_url,model_base_remote_url,base.group_user,1,1,1,0
+access_server_command_properties,access_server_command_properties,model_server_command_properties,base.group_user,1,1,1,0
+access_server_static_properties,access_server_static_properties,model_server_static_properties,base.group_user,1,1,1,0
