@@ -9,10 +9,10 @@ class BaseRemoteServer(models.Model):
 
     name = fields.Char("Description/Usage", required=True)
     server_ip = fields.Char("IP", required=True)
-    ssh_user = fields.Char("SSH User")
-    ssh_port = fields.Integer("SSH Port Number")
-    private_key_path = fields.Char("Private Key Path", required=True)
-    active = fields.Boolean("Active", default=True)
+    ssh_user = fields.Char("SSH User", required=True)
+    ssh_port = fields.Integer("SSH Port Number", required=True)
+    private_key_path = fields.Char(required=True)
+    active = fields.Boolean(default=True)
     server_command_properties_ids = fields.One2many(
         "server.command.properties",
         "base_remote_server_id",
@@ -27,7 +27,9 @@ class BaseRemoteServer(models.Model):
     database_ids = fields.One2many(
         "base.remote.database", "base_remote_server_id", string="Odoo Database(s)"
     )
+    partner_id = fields.Many2one("res.partner", required=True)
+    remark = fields.Text()
 
-    def sync_custom_properties(self):
+    def sync_command_properties(self):
         for prop in self.server_command_properties_ids:
             prop._compute_property_value()

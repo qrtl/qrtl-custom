@@ -3,11 +3,12 @@
 {
     "name": "Remote Servers Management",
     "summary": "Remote Servers Management",
-    "version": "12.0.1.0.0",
+    "version": "16.0.1.0.0",
     "category": "Others",
     "author": "Quartile Limited",
     "website": "https://www.quartile.co",
     "license": "LGPL-3",
+    "external_dependencies": {"python": ["paramiko"]},
     "depends": [
         "base",
     ],
