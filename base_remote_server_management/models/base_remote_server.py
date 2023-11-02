@@ -1,11 +1,11 @@
 # Copyright 2020 Quartile Limited
 # License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl).
 
-from odoo import models, fields
+from odoo import fields, models
 
 
 class BaseRemoteServer(models.Model):
-    _name = 'base.remote.server'
+    _name = "base.remote.server"
 
     name = fields.Char("Description/Usage", required=True)
     server_ip = fields.Char("IP", required=True)
@@ -13,10 +13,20 @@ class BaseRemoteServer(models.Model):
     ssh_port = fields.Integer("SSH Port Number")
     private_key_path = fields.Char("Private Key Path", required=True)
     active = fields.Boolean("Active", default=True)
-    server_command_properties_ids = fields.One2many('server.command.properties', 'base_remote_server_id', string='Command Properties')
-    server_static_properties_ids = fields.One2many('server.static.properties', 'base_remote_server_id', string='Static Properties')
-    server_url_ids = fields.One2many('base.remote.url', 'base_remote_server_id', string='Access URL(s)')
-    database_ids = fields.One2many('base.remote.database', 'base_remote_server_id', string='Odoo Database(s)')
+    server_command_properties_ids = fields.One2many(
+        "server.command.properties",
+        "base_remote_server_id",
+        string="Command Properties",
+    )
+    server_static_properties_ids = fields.One2many(
+        "server.static.properties", "base_remote_server_id", string="Static Properties"
+    )
+    server_url_ids = fields.One2many(
+        "base.remote.url", "base_remote_server_id", string="Access URL(s)"
+    )
+    database_ids = fields.One2many(
+        "base.remote.database", "base_remote_server_id", string="Odoo Database(s)"
+    )
 
     def sync_custom_properties(self):
         for prop in self.server_command_properties_ids:
