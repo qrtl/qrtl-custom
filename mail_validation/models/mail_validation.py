@@ -8,18 +8,23 @@ class MailValidation(models.Model):
     _name = "mail.validation"
     _description = "Mail Validation"
 
-    _sql_constraints = [
-        ("model_unique", "UNIQUE(model_id)", "The model can only be added once!")
-    ]
-
-    model_id = fields.Selection(
-        selection="_list_all_models", string="Model", required=True
-    )
-    domain = fields.Text(
-        default="[]",
+    name = fields.Char(required=True)
+    model = fields.Selection(selection="_list_all_models", required=True)
+    validation_type = fields.Selection(
+        selection=[
+            ("by_domain", "By domain"),
+            ("by_py_code", "By python code"),
+        ],
         required=True,
-        help="""Enter a domain expression for mail validation.
-        Example: [('partner_id', '!=', self.project_id.commercial_partner_id.id)]""",
+        default="by_py_code",
+        help="By python code: allow to define any arbitrary check\n"
+        "By domain: limited to a selection by an odoo domain",
+    )
+    domain = fields.Char()
+    code = fields.Text(
+        "Python Code",
+        help="Python code executed to check the mail validation "
+        "Use block = True to block the sending mail",
     )
 
     @api.model

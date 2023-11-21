@@ -5,7 +5,8 @@
         <field name="model">mail.validation</field>
         <field name="arch" type="xml">
             <tree>
-                <field name="model_id" />
+                <field name="name" />
+                <field name="model" />
             </tree>
         </field>
     </record>
@@ -16,9 +17,30 @@
             <form>
                 <sheet>
                     <group>
-                        <field name="model_id" />
-                        <field name="domain" />
+                        <field name="name" />
+                        <field name="model" />
+                        <field name="validation_type" widget="radio" />
+                        <field
+                            name="domain"
+                            attrs="{'invisible': [('validation_type','!=','by_domain')], 'required': [('validation_type','=','by_domain')]}"
+                            widget="domain"
+                            options="{'model': 'model'}"
+                        />
                     </group>
+                    <notebook>
+                        <page
+                            name="code"
+                            string="Python Code"
+                            attrs="{'invisible': [('validation_type','!=','by_py_code')], 'required': [('validation_type','=','by_py_code')]}"
+                        >
+                            <field
+                                name="code"
+                                widget="ace"
+                                options="{'mode': 'python'}"
+                                placeholder="Enter Python code here. To block the sending mail use: block = True"
+                            />
+                        </page>
+                    </notebook>
                 </sheet>
             </form>
         </field>
