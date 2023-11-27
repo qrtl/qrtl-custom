@@ -22,12 +22,13 @@ HR Timesheet Unpropagate Project
 
 |badge1| |badge2| |badge3|
 
-This module changes the behavior of standard Odoo to ensure that when you reassign a
-task to a different project, any timesheets linked to that task are not automatically
-updated.
+This module changes the behavior of standard Odoo to ensure that when
+you reassign a task to a different project, any timesheets linked to
+that task are not automatically updated.
 
-This can be useful in situations where your operation assumes that timesheets may be
-linked to different projects than those of their tasks.
+This can be useful in situations where your operation assumes that
+timesheets may be linked to different projects than those of their
+tasks.
 
 **Table of contents**
 
@@ -48,12 +49,12 @@ Credits
 =======
 
 Authors
-~~~~~~~
+-------
 
 * Quartile Limited
 
 Maintainers
-~~~~~~~~~~~
+-----------
 
 This module is part of the `qrtl/qrtl-custom <https://github.com/qrtl/qrtl-custom/tree/16.0/hr_timesheet_unpropagate_project>`_ project on GitHub.
 

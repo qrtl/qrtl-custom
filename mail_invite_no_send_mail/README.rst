@@ -22,8 +22,9 @@ Mail Invite No Send Mail
 
 |badge1| |badge2| |badge3|
 
-This module sets send_mail to False by default when adding a new follower
-to avoid unnecessary email notification of them being added as a follower.
+This module sets send_mail to False by default when adding a new
+follower to avoid unnecessary email notification of them being added as
+a follower.
 
 **Table of contents**
 
@@ -44,12 +45,12 @@ Credits
 =======
 
 Authors
-~~~~~~~
+-------
 
 * Quartile Limited
 
 Maintainers
-~~~~~~~~~~~
+-----------
 
 This module is part of the `qrtl/qrtl-custom <https://github.com/qrtl/qrtl-custom/tree/16.0/mail_invite_no_send_mail>`_ project on GitHub.
 
