@@ -43,12 +43,12 @@ Credits
 =======
 
 Authors
-~~~~~~~
+-------
 
 * Quartile Limited
 
 Maintainers
-~~~~~~~~~~~
+-----------
 
 This module is part of the `qrtl/qrtl-custom <https://github.com/qrtl/qrtl-custom/tree/16.0/portal_project_task_hide_timesheet>`_ project on GitHub.
 
