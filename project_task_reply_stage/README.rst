@@ -22,9 +22,9 @@ Auto-update Replied Task's Stage
 
 |badge1| |badge2| |badge3|
 
-This module adds 'Customer's Update Stage' to project and general settings.
-When non-internal user send an update to the task, the stage will be update
-automatically.
+This module adds 'Customer's Update Stage' to project and general
+settings. When non-internal user send an update to the task, the stage
+will be update automatically.
 
 **Table of contents**
 
@@ -45,12 +45,12 @@ Credits
 =======
 
 Authors
-~~~~~~~
+-------
 
 * Quartile Limited
 
 Maintainers
-~~~~~~~~~~~
+-----------
 
 This module is part of the `qrtl/qrtl-custom <https://github.com/qrtl/qrtl-custom/tree/16.0/project_task_reply_stage>`_ project on GitHub.
 
