@@ -22,18 +22,18 @@ Account Analytic Group
 
 |badge1| |badge2| |badge3|
 
-This module is designed to restore the Analytic Group functionality that was present
-in versions prior to the 16.0 update.
-
+This module is designed to restore the Analytic Group functionality that
+was present in versions prior to the 16.0 update.
 
 Background
-~~~~~~~~~~
+----------
 
-In Odoo 16, the 'Analytic Group' feature was replaced with the 'Analytic Plan'.
-This new feature allows better tracking of costs and revenues by project or department.
-However, we were using 'Analytic Group' for timesheet grouping, which is
-incompatible with the new feature. This module is designed to bring back
-the 'Analytic Group' functionality to meet our specific needs.
+In Odoo 16, the 'Analytic Group' feature was replaced with the 'Analytic
+Plan'. This new feature allows better tracking of costs and revenues by
+project or department. However, we were using 'Analytic Group' for
+timesheet grouping, which is incompatible with the new feature. This
+module is designed to bring back the 'Analytic Group' functionality to
+meet our specific needs.
 
 **Table of contents**
 
@@ -54,12 +54,12 @@ Credits
 =======
 
 Authors
-~~~~~~~
+-------
 
 * Quartile Limited
 
 Maintainers
-~~~~~~~~~~~
+-----------
 
 This module is part of the `qrtl/qrtl-custom <https://github.com/qrtl/qrtl-custom/tree/16.0/account_analytic_group>`_ project on GitHub.
 
