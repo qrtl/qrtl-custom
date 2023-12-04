@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <menuitem id="menu_root_server_management" name="Server Management" sequence="10" />
+    <menuitem
+        id="remote_server_menu"
+        name="Servers"
+        parent="menu_root_server_management"
+        sequence="2"
+    />
+
+    <record id="base_remote_server_view_tree" model="ir.ui.view">
+        <field name="name">base.remote.server.tree</field>
+        <field name="model">base.remote.server</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name" />
+                <field name="partner_id" />
+                <field name="server_ip" />
+                <field name="ssh_port" />
+                <field name="server_url_ids" widget="many2many_tags" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="base_remote_server_view_form" model="ir.ui.view">
+        <field name="name">base.remote.server.form</field>
+        <field name="model">base.remote.server</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button
+                        name="sync_command_properties"
+                        string="Sync Command Properties"
+                        type="object"
+                        class="oe_highlight"
+                    />
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+
+                    </div>
+                    <div class="oe_title">
+                        <label for="name" class="oe_edit_only" />
+                        <h1>
+                            <field name="name" />
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="partner_id" />
+                            <field name="server_ip" />
+                            <field name="ssh_user" />
+                            <field name="ssh_port" />
+                            <field name="private_key_path" />
+                            <field name="remark" />
+                        </group>
+                    </group>
+                    <notebook colspan="4">
+                        <page name="server_properties" string="Server Properties">
+                            <!-- <label for="database_ids"/> -->
+                            <field name="database_ids">
+                                <tree editable="bottom">
+                                    <field name="base_remote_server_id" invisible="1" />
+                                    <field name="name" />
+                                </tree>
+                            </field>
+                            <!-- <label for="server_url_ids"/> -->
+                            <field name="server_url_ids">
+                                <tree editable="bottom">
+                                    <field name="base_remote_server_id" invisible="1" />
+                                    <field name="name" />
+                                    <field name="base_remote_database_id" />
+                                    <field name="valid" />
+                                </tree>
+                            </field>
+                        </page>
+                        <page name="static_properties" string="Static Properties">
+                            <label for="server_static_properties_ids" />
+                            <field name="server_static_properties_ids">
+                                <tree editable="bottom">
+                                    <field name="base_remote_server_id" invisible="1" />
+                                    <field name="name" />
+                                    <field name="property_value" />
+                                </tree>
+                            </field>
+                        </page>
+                        <page name="command_properties" string="Command Properties">
+                            <label for="server_command_properties_ids" />
+                            <field name="server_command_properties_ids">
+                                <tree editable="bottom">
+                                    <field name="base_remote_server_id" invisible="1" />
+                                    <field name="name" />
+                                    <field name="command" />
+                                    <field name="property_value" />
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="base_remote_server_action" model="ir.actions.act_window">
+        <field name="name">Remote Server Information</field>
+        <field name="res_model">base.remote.server</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{}</field>
+    </record>
+
+    <menuitem
+        id="base_remote_server"
+        name="Remote Server(s)"
+        parent="remote_server_menu"
+        action="base_remote_server_action"
+        sequence="3"
+    />
+
+</odoo>
