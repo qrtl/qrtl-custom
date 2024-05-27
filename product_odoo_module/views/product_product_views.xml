@@ -1,0 +1,31 @@
+<odoo>
+    <record id="product_product_form_view_inherit" model="ir.ui.view">
+        <field name="name">product.product.form.inherit</field>
+        <field name="model">product.product</field>
+        <field name="inherit_id" ref="product.product_normal_form_view" />
+        <field name="arch" type="xml">
+            <xpath expr="//div[@name='options']" position="inside">
+                <span class="d-inline-block">
+                    <field name="is_odoo_module" />
+                    <label for="is_odoo_module" />
+                </span>
+            </xpath>
+            <xpath expr="//page[last()]" position="after">
+                <page
+                    string="Module Info"
+                    attrs="{'invisible': [('is_odoo_module', '=', False)]}"
+                >
+                    <group>
+                        <field name="technical_name" />
+                        <field name="license_type" />
+                        <field name="complexity" />
+                        <field name="popularity_factor" />
+                        <field name="loc" />
+                        <field name="amount" />
+                        <field name="amount_incl_mig" />
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>
