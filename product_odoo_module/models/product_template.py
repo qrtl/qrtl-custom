@@ -9,7 +9,3 @@ class ProductTemplate(models.Model):
 
     is_odoo_module = fields.Boolean()
     technical_name = fields.Char()
-    license_type = fields.Selection(
-        [("agpl-3", "AGPL-3"), ("lgpl-3", "LGPL-3"), ("other", "Other proprietary")],
-        help="Select the type of license",
-    )

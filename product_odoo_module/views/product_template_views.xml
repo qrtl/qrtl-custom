@@ -17,7 +17,6 @@
                 >
                     <group>
                         <field name="technical_name" />
-                        <field name="license_type" />
                     </group>
                 </page>
             </xpath>

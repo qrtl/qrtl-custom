@@ -7,11 +7,9 @@ from odoo import api, fields, models
 class ProductProduct(models.Model):
     _inherit = "product.product"
 
-    technical_name = fields.Char(
-        related="product_tmpl_id.technical_name", store=True, readonly=False
-    )
     license_type = fields.Selection(
-        related="product_tmpl_id.license_type", store=True, readonly=False
+        [("agpl-3", "AGPL-3"), ("lgpl-3", "LGPL-3"), ("other", "Other proprietary")],
+        help="Select the type of license",
     )
     complexity = fields.Selection([("high", "High"), ("mid", "Mid"), ("low", "Low")])
     popularity_factor = fields.Float()
