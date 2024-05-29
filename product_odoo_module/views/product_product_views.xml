@@ -15,7 +15,7 @@
                     string="Module Info"
                     attrs="{'invisible': [('is_odoo_module', '=', False)]}"
                 >
-                    <group>
+                    <group name="module_info">
                         <field name="technical_name" />
                         <field name="license_type" />
                         <field name="complexity" />
