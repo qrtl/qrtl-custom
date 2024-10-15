@@ -1,0 +1,53 @@
+<odoo>
+    <record id="view_customer_info_search" model="ir.ui.view">
+        <field name="name">customer.info.search</field>
+        <field name="model">custom.module.customerinfo</field>
+        <field name="arch" type="xml">
+            <search string="Search Customer Info">
+                <field name="partner_id" string="Partner" />
+                <field name="product_id" string="Product" />
+                <group string="Group By" expand="0">
+                    <filter
+                        string="Partner"
+                        name="partner"
+                        context="{'group_by': 'partner_id'}"
+                    />
+                    <filter
+                        string="Repository"
+                        name="repo"
+                        context="{'group_by': 'repo'}"
+                    />
+                </group>
+            </search>
+        </field>
+    </record>
+    <record id="view_customer_info_tree" model="ir.ui.view">
+        <field name="name">customer.info.tree</field>
+        <field name="model">custom.module.customerinfo</field>
+        <field name="arch" type="xml">
+            <tree editable="top">
+                <field name="partner_id" />
+                <field name="product_id" />
+                <field name="repo" />
+                <field name="amount" sum="Total Amount" />
+                <field name="amount_incl_mig" sum="Total Amount Incl. Mig" />
+            </tree>
+        </field>
+    </record>
+    <record id="action_customer_info" model="ir.actions.act_window">
+        <field name="name">Custom Module Customer Info</field>
+        <field name="res_model">custom.module.customerinfo</field>
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="view_customer_info_tree" />
+        <field
+            name="context"
+        >{'search_default_partner': 1, 'search_default_repo': 1}</field>
+    </record>
+    <menuitem
+        id="menu_custom_module_customerinfo"
+        name="Custom Module Customer Info"
+        parent="sale.product_menu_catalog"
+        action="action_customer_info"
+        sequence="30"
+    />
+</odoo>
