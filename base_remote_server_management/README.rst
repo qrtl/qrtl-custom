@@ -32,9 +32,10 @@ This module simplifies the management of customer server properties.
 Usage
 =====
 
-To manage your customer's server, open the Server Management app.
-Add a new remote server and fill in its details. If you need to sync
-the server command properties, just click the 'SYNC COMMAND PROPERTIES' button at the top.
+To manage your customer's server, open the Server Management app. Add a
+new remote server and fill in its details. If you need to sync the
+server command properties, just click the 'SYNC COMMAND PROPERTIES'
+button at the top.
 
 Bug Tracker
 ===========
@@ -50,12 +51,12 @@ Credits
 =======
 
 Authors
-~~~~~~~
+-------
 
-* Quartile Limited
+* Quartile
 
 Maintainers
-~~~~~~~~~~~
+-----------
 
 This module is part of the `qrtl/qrtl-custom <https://github.com/qrtl/qrtl-custom/tree/16.0/base_remote_server_management>`_ project on GitHub.
 

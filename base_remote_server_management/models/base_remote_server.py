@@ -1,4 +1,4 @@
-# Copyright 2020 Quartile Limited
+# Copyright 2020 Quartile
 # License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl).
 
 from odoo import fields, models
@@ -8,6 +8,7 @@ class BaseRemoteServer(models.Model):
     _name = "base.remote.server"
 
     name = fields.Char("Description/Usage", required=True)
+    partner_id = fields.Many2one("res.partner", string="Client", required=True)
     server_ip = fields.Char("IP", required=True)
     ssh_user = fields.Char("SSH User", required=True)
     ssh_port = fields.Integer("SSH Port Number", required=True)
@@ -27,7 +28,16 @@ class BaseRemoteServer(models.Model):
     database_ids = fields.One2many(
         "base.remote.database", "base_remote_server_id", string="Odoo Database(s)"
     )
-    partner_id = fields.Many2one("res.partner", required=True)
+    odoo_version = fields.Char(required=True)
+    managed_by_qrtl = fields.Boolean(default=True)
+    service_provider = fields.Char(required=True)
+    storage_size = fields.Integer("Storage Size(GB)", required=True)
+    vcore = fields.Float(required=True)
+    ram_size = fields.Integer("RAM(GB)", required=True)
+    tsl_provider = fields.Char("TSL Provider", required=True)
+    web_server = fields.Char(required=True)
+    db_manager_restrict = fields.Boolean(deafult=True)
+    os = fields.Char(required=True)
     remark = fields.Text()
 
     def sync_command_properties(self):

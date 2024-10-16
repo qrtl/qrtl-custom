@@ -9,16 +9,60 @@
         sequence="2"
     />
 
+    <record id="base_remote_server_view_search" model="ir.ui.view">
+        <field name="name">base.remote.server.search</field>
+        <field name="model">base.remote.server</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="ssh_port" />
+                <field name="name" />
+                <field name="odoo_version" />
+                <field name="partner_id" />
+                <field name="managed_by_qrtl" />
+                <field name="service_provider" />
+                <field name="storage_size" />
+                <field name="vcore" />
+                <field name="ram_size" />
+                <field name="tsl_provider" />
+                <field name="web_server" />
+                <field name="db_manager_restrict" />
+                <field name="os" />
+                <group expand="1" string="Group By">
+                    <filter
+                        string="OS"
+                        name="group_by_os"
+                        domain="[]"
+                        context="{'group_by': 'os'}"
+                    />
+                    <filter
+                        string="Odoo Version"
+                        name="group_by_odoo_version"
+                        domain="[]"
+                        context="{'group_by': 'odoo_version'}"
+                    />
+                </group>
+            </search>
+        </field>
+    </record>
+
     <record id="base_remote_server_view_tree" model="ir.ui.view">
         <field name="name">base.remote.server.tree</field>
         <field name="model">base.remote.server</field>
         <field name="arch" type="xml">
             <tree>
-                <field name="name" />
-                <field name="partner_id" />
-                <field name="server_ip" />
-                <field name="ssh_port" />
-                <field name="server_url_ids" widget="many2many_tags" />
+                <field name="ssh_port" optional="show" />
+                <field name="name" optional="show" />
+                <field name="odoo_version" optional="show" />
+                <field name="partner_id" optional="show" />
+                <field name="managed_by_qrtl" optional="show" />
+                <field name="service_provider" optional="show" />
+                <field name="storage_size" optional="show" />
+                <field name="vcore" optional="show" />
+                <field name="ram_size" optional="show" />
+                <field name="tsl_provider" optional="show" />
+                <field name="web_server" optional="show" />
+                <field name="db_manager_restrict" optional="show" />
+                <field name="os" optional="show" />
             </tree>
         </field>
     </record>
@@ -53,19 +97,27 @@
                             <field name="ssh_user" />
                             <field name="ssh_port" />
                             <field name="private_key_path" />
+                            <field name="odoo_version" />
+                            <field name="managed_by_qrtl" />
+                            <field name="service_provider" />
+                            <field name="storage_size" />
+                            <field name="vcore" />
+                            <field name="ram_size" />
+                            <field name="tsl_provider" />
+                            <field name="web_server" />
+                            <field name="db_manager_restrict" />
+                            <field name="os" />
                             <field name="remark" />
                         </group>
                     </group>
                     <notebook colspan="4">
                         <page name="server_properties" string="Server Properties">
-                            <!-- <label for="database_ids"/> -->
                             <field name="database_ids">
                                 <tree editable="bottom">
                                     <field name="base_remote_server_id" invisible="1" />
                                     <field name="name" />
                                 </tree>
                             </field>
-                            <!-- <label for="server_url_ids"/> -->
                             <field name="server_url_ids">
                                 <tree editable="bottom">
                                     <field name="base_remote_server_id" invisible="1" />
