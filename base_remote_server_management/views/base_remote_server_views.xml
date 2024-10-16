@@ -107,6 +107,7 @@
                             <field name="web_server" />
                             <field name="db_manager_restrict" />
                             <field name="os" />
+                            <field name="backup_location" />
                             <field name="remark" />
                         </group>
                     </group>

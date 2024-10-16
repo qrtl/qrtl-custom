@@ -38,6 +38,7 @@ class BaseRemoteServer(models.Model):
     web_server = fields.Char(required=True)
     db_manager_restrict = fields.Boolean(deafult=True)
     os = fields.Char(required=True)
+    backup_location = fields.Char(required=True)
     remark = fields.Text()
 
     def sync_command_properties(self):
