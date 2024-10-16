@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <menuitem id="menu_root_server_management" name="Server Management" sequence="10" />
+    <menuitem
+        id="remote_server_menu"
+        name="Servers"
+        parent="menu_root_server_management"
+        sequence="2"
+    />
+
+    <record id="base_remote_server_view_search" model="ir.ui.view">
+        <field name="name">base.remote.server.search</field>
+        <field name="model">base.remote.server</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="ssh_port" />
+                <field name="name" />
+                <field name="odoo_version" />
+                <field name="partner_id" />
+                <field name="managed_by_qrtl" />
+                <field name="service_provider" />
+                <field name="storage_size" />
+                <field name="vcore" />
+                <field name="ram_size" />
+                <field name="tsl_provider" />
+                <field name="web_server" />
+                <field name="db_manager_restrict" />
+                <field name="os" />
+                <group expand="1" string="Group By">
+                    <filter
+                        string="OS"
+                        name="group_by_os"
+                        domain="[]"
+                        context="{'group_by': 'os'}"
+                    />
+                    <filter
+                        string="Odoo Version"
+                        name="group_by_odoo_version"
+                        domain="[]"
+                        context="{'group_by': 'odoo_version'}"
+                    />
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="base_remote_server_view_tree" model="ir.ui.view">
+        <field name="name">base.remote.server.tree</field>
+        <field name="model">base.remote.server</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="ssh_port" optional="show" />
+                <field name="name" optional="show" />
+                <field name="odoo_version" optional="show" />
+                <field name="partner_id" optional="show" />
+                <field name="managed_by_qrtl" optional="show" />
+                <field name="service_provider" optional="show" />
+                <field name="storage_size" optional="show" />
+                <field name="vcore" optional="show" />
+                <field name="ram_size" optional="show" />
+                <field name="tsl_provider" optional="show" />
+                <field name="web_server" optional="show" />
+                <field name="db_manager_restrict" optional="show" />
+                <field name="os" optional="show" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="base_remote_server_view_form" model="ir.ui.view">
+        <field name="name">base.remote.server.form</field>
+        <field name="model">base.remote.server</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button
+                        name="sync_command_properties"
+                        string="Sync Command Properties"
+                        type="object"
+                        class="oe_highlight"
+                    />
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+
+                    </div>
+                    <div class="oe_title">
+                        <label for="name" class="oe_edit_only" />
+                        <h1>
+                            <field name="name" />
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="partner_id" />
+                            <field name="server_ip" />
+                            <field name="ssh_user" />
+                            <field name="ssh_port" />
+                            <field name="private_key_path" />
+                            <field name="odoo_version" />
+                            <field name="managed_by_qrtl" />
+                            <field name="service_provider" />
+                            <field name="storage_size" />
+                            <field name="vcore" />
+                            <field name="ram_size" />
+                            <field name="tsl_provider" />
+                            <field name="web_server" />
+                            <field name="db_manager_restrict" />
+                            <field name="os" />
+                            <field name="backup_location" />
+                            <field name="remark" />
+                        </group>
+                    </group>
+                    <notebook colspan="4">
+                        <page name="server_properties" string="Server Properties">
+                            <field name="database_ids">
+                                <tree editable="bottom">
+                                    <field name="base_remote_server_id" invisible="1" />
+                                    <field name="name" />
+                                </tree>
+                            </field>
+                            <field name="server_url_ids">
+                                <tree editable="bottom">
+                                    <field name="base_remote_server_id" invisible="1" />
+                                    <field name="name" />
+                                    <field name="base_remote_database_id" />
+                                    <field name="valid" />
+                                </tree>
+                            </field>
+                        </page>
+                        <page name="static_properties" string="Static Properties">
+                            <label for="server_static_properties_ids" />
+                            <field name="server_static_properties_ids">
+                                <tree editable="bottom">
+                                    <field name="base_remote_server_id" invisible="1" />
+                                    <field name="name" />
+                                    <field name="property_value" />
+                                </tree>
+                            </field>
+                        </page>
+                        <page name="command_properties" string="Command Properties">
+                            <label for="server_command_properties_ids" />
+                            <field name="server_command_properties_ids">
+                                <tree editable="bottom">
+                                    <field name="base_remote_server_id" invisible="1" />
+                                    <field name="name" />
+                                    <field name="command" />
+                                    <field name="property_value" />
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="base_remote_server_action" model="ir.actions.act_window">
+        <field name="name">Remote Server Information</field>
+        <field name="res_model">base.remote.server</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{}</field>
+    </record>
+
+    <menuitem
+        id="base_remote_server"
+        name="Remote Server(s)"
+        parent="remote_server_menu"
+        action="base_remote_server_action"
+        sequence="3"
+    />
+
+</odoo>
