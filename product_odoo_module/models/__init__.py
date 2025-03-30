@@ -1,2 +1,3 @@
+from . import product_odoo_version
 from . import product_template
-from . import product_product
+from . import res_company
