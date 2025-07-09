@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <menuitem
+        id="menu_root_remote_server_mgmt"
+        name="Server Management"
+        groups="remote_server_mgmt.group_remote_server_user"
+        sequence="10"
+    />
+    <menuitem
+        id="menu_remote_server"
+        name="Servers"
+        parent="menu_root_remote_server_mgmt"
+        sequence="1"
+    />
+    <menuitem
+        id="menu_remote_server_config"
+        name="Configuration"
+        parent="menu_root_remote_server_mgmt"
+        groups="remote_server_mgmt.group_remote_server_manager"
+        sequence="2"
+    />
+</odoo>

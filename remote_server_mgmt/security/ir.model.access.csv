@@ -1,0 +1,10 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_remote_database,access_remote_database,model_remote_database,base.group_user,1,1,1,0
+access_remote_server_user,remote.server.user,model_remote_server,remote_server_mgmt.group_remote_server_user,1,0,0,0
+access_remote_server_officer,remote.server.officer,model_remote_server,remote_server_mgmt.group_remote_server_officer,1,1,1,0
+access_remote_server_manager,remote.server.manager,model_remote_server,remote_server_mgmt.group_remote_server_manager,1,1,1,1
+access_remote_server_tag_user,remote.server.tag.user,model_remote_server_tag,base.group_user,1,0,0,0
+access_remote_server_tag_manager,remote.server.tag.manager,model_remote_server_tag,remote_server_mgmt.group_remote_server_manager,1,1,1,1
+access_remote_url,access_remote_url,model_remote_url,base.group_user,1,1,1,0
+access_server_command_properties,access_server_command_properties,model_server_command_properties,base.group_user,1,1,1,0
+access_server_static_properties,access_server_static_properties,model_server_static_properties,base.group_user,1,1,1,0
