@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <menuitem
+        id="menu_root"
+        name="Server Management"
+        groups="base.group_user"
+        web_icon="server_management,static/description/icon.jpg"
+    />
+    <menuitem
+        id="menu_server_management_root"
+        name="Server Management"
+        parent="menu_root"
+        groups="base.group_user"
+        sequence="3"
+    />
+    <menuitem
+        id="menu_server_server"
+        name="Servers"
+        action="action_server_server"
+        parent="menu_server_management_root"
+        groups="base.group_user"
+        sequence="3"
+    />
+    <menuitem
+        id="menu_server_tag"
+        name="Server Tags"
+        parent="menu_server_management_root"
+        action="action_server_tag"
+        sequence="10"
+    />
+</odoo>

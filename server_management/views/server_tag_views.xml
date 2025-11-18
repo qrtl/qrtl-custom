@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="view_server_tag_tree" model="ir.ui.view">
+        <field name="name">server.tag.tree</field>
+        <field name="model">server.tag</field>
+        <field name="arch" type="xml">
+            <tree editable="bottom">
+                <field name="name" />
+                <field name="color" widget="color_picker" />
+            </tree>
+        </field>
+    </record>
+    <record id="action_server_tag" model="ir.actions.act_window">
+        <field name="name">Server Tags</field>
+        <field name="res_model">server.tag</field>
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="view_server_tag_tree" />
+    </record>
+</odoo>
