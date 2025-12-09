@@ -1,10 +1,10 @@
-# Copyright 2019 Quartile Limited
+# Copyright 2019 Quartile (https://www.quartile.co)
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 {
     "name": "Hide timesheet task in portal page",
-    "version": "16.0.1.0.0",
+    "version": "19.0.1.0.0",
     "depends": ["hr_timesheet"],
-    "author": "Quartile Limited",
+    "author": "Quartile",
     "license": "AGPL-3",
     "website": "https://www.quartile.co",
     "category": "HR",
