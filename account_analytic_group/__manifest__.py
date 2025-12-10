@@ -1,12 +1,12 @@
-# Copyright 2023 Quartile Limited
+# Copyright 2023 Quartile (https://www.quartile.co)
 # License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl).
 {
     "name": "Account Analytic Group",
     "category": "Analytic",
     "license": "LGPL-3",
-    "author": "Quartile Limited",
+    "author": "Quartile",
     "website": "https://www.quartile.co",
-    "version": "16.0.1.0.0",
+    "version": "19.0.1.0.0",
     "depends": ["account"],
     "data": [
         "security/ir.model.access.csv",
