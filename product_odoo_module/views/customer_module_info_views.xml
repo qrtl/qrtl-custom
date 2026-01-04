@@ -12,7 +12,6 @@
                 <field name="source_type_id" />
                 <field name="module_license_id" />
                 <field name="module_complexity_id" />
-                <field name="is_open_source" />
                 <field name="customer_count" />
                 <field name="loc" />
                 <field name="fee_factor" />
@@ -49,7 +48,6 @@
                         <field name="source_type_id" readonly="1" />
                         <field name="module_license_id" readonly="1" />
                         <field name="module_complexity_id" readonly="1" />
-                        <field name="is_open_source" readonly="1" />
                         <field name="customer_count" readonly="1" />
                         <field name="loc" />
                         <field name="business_impact_id" />

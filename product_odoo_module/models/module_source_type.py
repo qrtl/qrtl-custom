@@ -10,6 +10,6 @@ class ModuleSourceType(models.Model):
     _order = "sequence, name"
 
     name = fields.Char(required=True, translate=True)
-    code = fields.Char(required=True)
     sequence = fields.Integer(default=10)
+    factor = fields.Float(default=1.0, help="Multiplier for fee calculation.")
     active = fields.Boolean(default=True)

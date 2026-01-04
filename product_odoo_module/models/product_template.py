@@ -22,6 +22,7 @@ class ProductTemplate(models.Model):
         "module.complexity",
         string="Complexity",
     )
+    module_popularity_id = fields.Many2one("module.popularity", string="Popularity")
     customer_module_count = fields.Integer(compute="_compute_customer_module_count")
 
     @api.depends("product_variant_ids")

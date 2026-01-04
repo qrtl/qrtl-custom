@@ -17,7 +17,7 @@
                         </group>
                     </group>
                     <div class="text-muted">
-                        Available variables: base_price, source_type_code, customer_count, license_name, loc, standard_rate, complexity_factor
+                        Available variables: source_type_factor, complexity_factor, license_factor, customer_count, loc, standard_rate
                     </div>
                 </page>
             </xpath>

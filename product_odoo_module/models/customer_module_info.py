@@ -38,10 +38,6 @@ class CustomerModuleInfo(models.Model):
         related="product_id.module_complexity_id",
         store=True,
     )
-    is_open_source = fields.Boolean(
-        related="module_license_id.is_open_source",
-        store=True,
-    )
     customer_count = fields.Integer(
         related="product_tmpl_id.customer_module_count",
         string="Total Customers",

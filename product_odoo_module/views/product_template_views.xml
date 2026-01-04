@@ -32,6 +32,7 @@
                     <field name="module_repo_url" />
                     <field name="business_impact_id" />
                     <field name="module_complexity_id" />
+                    <field name="module_popularity_id" />
                 </group>
             </xpath>
             <xpath

@@ -11,5 +11,5 @@ class ModuleLicense(models.Model):
 
     name = fields.Char(required=True)
     sequence = fields.Integer(default=10)
-    is_open_source = fields.Boolean()
+    factor = fields.Float(default=1.0, help="Multiplier for fee calculation.")
     active = fields.Boolean(default=True)

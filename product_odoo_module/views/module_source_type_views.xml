@@ -7,7 +7,7 @@
             <tree>
                 <field name="sequence" widget="handle" />
                 <field name="name" />
-                <field name="code" />
+                <field name="factor" />
             </tree>
         </field>
     </record>
@@ -26,8 +26,8 @@
                 <sheet>
                     <group>
                         <field name="name" />
-                        <field name="code" />
                         <field name="sequence" />
+                        <field name="factor" />
                     </group>
                 </sheet>
             </form>
@@ -39,7 +39,6 @@
         <field name="arch" type="xml">
             <search>
                 <field name="name" />
-                <field name="code" />
                 <filter
                     name="inactive"
                     string="Archived"

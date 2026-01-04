@@ -40,4 +40,16 @@
         parent="menu_product_odoo_module_settings"
         action="odoo_module_license_action"
     />
+    <menuitem
+        id="menu_module_source_type"
+        name="Source Types"
+        parent="menu_product_odoo_module_settings"
+        action="module_source_type_action"
+    />
+    <menuitem
+        id="menu_module_popularity"
+        name="Popularity"
+        parent="menu_product_odoo_module_settings"
+        action="action_module_popularity"
+    />
 </odoo>

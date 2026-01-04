@@ -2,7 +2,6 @@
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 
 from odoo import api, fields, models
-from odoo.tools.safe_eval import safe_eval
 
 
 class ProductProduct(models.Model):
@@ -42,34 +41,33 @@ class ProductProduct(models.Model):
         return products
 
     @api.depends(
-        "lst_price",
         "loc",
         "source_type_id",
-        "product_tmpl_id.customer_module_count",
         "module_license_id",
         "module_complexity_id",
+        "module_popularity_id",
+        "customer_module_count",
     )
     def _compute_suggested_fee(self):
         company = self.env.company
-        formula = company.module_fee_formula
         standard_rate = company.module_standard_rate or 0.0
-        for record in self:
-            if not formula:
-                record.suggested_fee = record.lst_price
-                continue
-            try:
-                local_vars = {
-                    "base_price": record.lst_price or 0.0,
-                    "source_type_code": record.source_type_id.code or "",
-                    "customer_count": record.product_tmpl_id.customer_module_count or 1,
-                    "license_name": record.module_license_id.name or "",
-                    "loc": record.loc or 0,
-                    "standard_rate": standard_rate,
-                    "complexity_factor": record.module_complexity_id.factor or 1.0,
-                }
-                record.suggested_fee = safe_eval(formula, local_vars)
-            except Exception:
-                record.suggested_fee = record.lst_price
+        for rec in self:
+            source_type_factor = rec.source_type_id.factor or 1.0
+            license_factor = rec.module_license_id.factor or 1.0
+            complexity_factor = rec.module_complexity_id.factor or 1.0
+            popularity_factor = rec.module_popularity_id.factor or 1.0
+            customer_count = rec.customer_module_count or 1
+            rec.suggested_fee = (
+                100
+                + rec.loc
+                / 100
+                * standard_rate
+                * source_type_factor
+                * complexity_factor
+                * license_factor
+                * popularity_factor
+                / (customer_count * 0.7)
+            )
 
     def action_view_customer_modules(self):
         self.ensure_one()
