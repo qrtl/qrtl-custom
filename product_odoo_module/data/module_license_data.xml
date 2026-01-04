@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo noupdate="1">
+    <record id="odoo_module_license_agpl3" model="module.license">
+        <field name="name">AGPL-3</field>
+        <field name="is_open_source" eval="True" />
+        <field name="sequence">10</field>
+    </record>
+    <record id="odoo_module_license_lgpl3" model="module.license">
+        <field name="name">LGPL-3</field>
+        <field name="is_open_source" eval="True" />
+        <field name="sequence">20</field>
+    </record>
+    <record id="odoo_module_license_gpl3" model="module.license">
+        <field name="name">GPL-3</field>
+        <field name="is_open_source" eval="True" />
+        <field name="sequence">30</field>
+    </record>
+    <record id="odoo_module_license_proprietary" model="module.license">
+        <field name="name">Other Proprietary</field>
+        <field name="sequence">40</field>
+    </record>
+</odoo>

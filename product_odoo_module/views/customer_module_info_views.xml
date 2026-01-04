@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="view_customer_module_tree" model="ir.ui.view">
+        <field name="name">customer.module.info.tree</field>
+        <field name="model">customer.module.info</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="partner_id" />
+                <field name="product_id" />
+                <field name="product_tmpl_id" />
+                <field name="series_value_id" string="Odoo Series" />
+                <field name="source_type_id" />
+                <field name="module_license_id" />
+                <field name="module_complexity_id" />
+                <field name="is_open_source" />
+                <field name="customer_count" />
+                <field name="loc" />
+                <field name="fee_factor" />
+                <field name="suggested_fee" />
+                <field name="monthly_fee" />
+                <field name="currency_id" invisible="1" />
+                <field name="date_start" />
+                <field name="date_end" />
+            </tree>
+        </field>
+    </record>
+    <record id="view_customer_module_form" model="ir.ui.view">
+        <field name="name">customer.module.info.form</field>
+        <field name="model">customer.module.info</field>
+        <field name="arch" type="xml">
+            <form string="Customer Module">
+                <field name="active" invisible="1" />
+                <widget
+                    name="web_ribbon"
+                    title="Archived"
+                    bg_color="text-bg-danger"
+                    attrs="{'invisible': [('active', '=', True)]}"
+                />
+                <sheet>
+                    <group>
+                        <field name="partner_id" />
+                        <field name="product_id" />
+                        <field name="product_tmpl_id" readonly="1" />
+                        <field
+                            name="series_value_id"
+                            string="Odoo Series"
+                            readonly="1"
+                        />
+                        <field name="source_type_id" readonly="1" />
+                        <field name="module_license_id" readonly="1" />
+                        <field name="module_complexity_id" readonly="1" />
+                        <field name="is_open_source" readonly="1" />
+                        <field name="customer_count" readonly="1" />
+                        <field name="loc" />
+                        <field name="business_impact_id" />
+                        <field name="fee_factor" />
+                        <field name="suggested_fee" />
+                        <field name="monthly_fee" />
+                        <field name="company_id" groups="base.group_multi_company" />
+                        <field name="currency_id" />
+                        <field name="date_start" />
+                        <field name="date_end" />
+                    </group>
+                    <group string="Notes">
+                        <field name="note" nolabel="1" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="view_customer_module_search" model="ir.ui.view">
+        <field name="name">customer.module.info.search</field>
+        <field name="model">customer.module.info</field>
+        <field name="arch" type="xml">
+            <search string="Customer Modules">
+                <field name="partner_id" />
+                <field name="product_tmpl_id" />
+                <field name="product_id" />
+                <field name="series_value_id" string="Odoo Series" />
+                <separator />
+                <filter name="active" string="Active" domain="[('active','=',True)]" />
+                <filter
+                    name="inactive"
+                    string="Archived"
+                    domain="[('active','=',False)]"
+                />
+                <separator />
+                <filter
+                    name="group_partner"
+                    string="Customer"
+                    context="{'group_by': 'partner_id'}"
+                />
+                <filter
+                    name="group_template"
+                    string="Module Template"
+                    context="{'group_by': 'product_tmpl_id'}"
+                />
+                <filter
+                    name="group_series"
+                    string="Odoo Series"
+                    context="{'group_by': 'series_value_id'}"
+                />
+                <filter
+                    name="group_complexity"
+                    string="Complexity"
+                    context="{'group_by': 'module_complexity_id'}"
+                />
+            </search>
+        </field>
+    </record>
+    <record id="action_customer_module" model="ir.actions.act_window">
+        <field name="name">Customer Modules</field>
+        <field name="res_model">customer.module.info</field>
+        <field name="view_mode">tree,form</field>
+        <field name="search_view_id" ref="view_customer_module_search" />
+        <field name="context">{'search_default_active': 1}</field>
+    </record>
+    <record id="action_product_odoo_module_templates" model="ir.actions.act_window">
+        <field name="name">Odoo Module Templates</field>
+        <field name="res_model">product.template</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[("is_odoo_module","=",True)]</field>
+        <field name="context">{'search_default_is_odoo_module': 1}</field>
+    </record>
+    <record id="action_product_odoo_module_variants" model="ir.actions.act_window">
+        <field name="name">Odoo Modules</field>
+        <field name="res_model">product.product</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[("is_odoo_module","=",True)]</field>
+    </record>
+</odoo>

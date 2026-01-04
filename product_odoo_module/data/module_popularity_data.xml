@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo noupdate="1">
+    <record id="module_popularity_very_high" model="module.popularity">
+        <field name="name">Very High</field>
+        <field name="sequence">1</field>
+        <field name="factor">0.2</field>
+    </record>
+    <record id="module_popularity_high" model="module.popularity">
+        <field name="name">High</field>
+        <field name="sequence">2</field>
+        <field name="factor">0.4</field>
+    </record>
+    <record id="module_popularity_medium" model="module.popularity">
+        <field name="name">Medium</field>
+        <field name="sequence">3</field>
+        <field name="factor">0.6</field>
+    </record>
+    <record id="module_popularity_low" model="module.popularity">
+        <field name="name">Low</field>
+        <field name="sequence">4</field>
+        <field name="factor">0.8</field>
+    </record>
+    <record id="module_popularity_very_low" model="module.popularity">
+        <field name="name">Very Low</field>
+        <field name="sequence">5</field>
+        <field name="factor">1.0</field>
+    </record>
+</odoo>

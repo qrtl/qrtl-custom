@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo noupdate="1">
+    <record id="product_attribute_odoo_series" model="product.attribute">
+        <field name="name">Series</field>
+        <field name="create_variant">always</field>
+        <field name="is_odoo_series" eval="True" />
+    </record>
+    <record id="product_attribute_value_odoo_series_10" model="product.attribute.value">
+        <field name="name">10.0</field>
+        <field name="attribute_id" ref="product_attribute_odoo_series" />
+    </record>
+    <record id="product_attribute_value_odoo_series_11" model="product.attribute.value">
+        <field name="name">11.0</field>
+        <field name="attribute_id" ref="product_attribute_odoo_series" />
+    </record>
+    <record id="product_attribute_value_odoo_series_12" model="product.attribute.value">
+        <field name="name">12.0</field>
+        <field name="attribute_id" ref="product_attribute_odoo_series" />
+    </record>
+    <record id="product_attribute_value_odoo_series_13" model="product.attribute.value">
+        <field name="name">13.0</field>
+        <field name="attribute_id" ref="product_attribute_odoo_series" />
+    </record>
+    <record id="product_attribute_value_odoo_series_14" model="product.attribute.value">
+        <field name="name">14.0</field>
+        <field name="attribute_id" ref="product_attribute_odoo_series" />
+    </record>
+    <record id="product_attribute_value_odoo_series_15" model="product.attribute.value">
+        <field name="name">15.0</field>
+        <field name="attribute_id" ref="product_attribute_odoo_series" />
+    </record>
+    <record id="product_attribute_value_odoo_series_16" model="product.attribute.value">
+        <field name="name">16.0</field>
+        <field name="attribute_id" ref="product_attribute_odoo_series" />
+    </record>
+    <record id="product_attribute_value_odoo_series_17" model="product.attribute.value">
+        <field name="name">17.0</field>
+        <field name="attribute_id" ref="product_attribute_odoo_series" />
+    </record>
+    <record id="product_attribute_value_odoo_series_18" model="product.attribute.value">
+        <field name="name">18.0</field>
+        <field name="attribute_id" ref="product_attribute_odoo_series" />
+    </record>
+    <record id="product_attribute_value_odoo_series_19" model="product.attribute.value">
+        <field name="name">19.0</field>
+        <field name="attribute_id" ref="product_attribute_odoo_series" />
+    </record>
+</odoo>

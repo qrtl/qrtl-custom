@@ -1,0 +1,19 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_customer_module_info_user,customer.module.info user,model_customer_module_info,base.group_user,1,0,0,0
+access_customer_module_info_portal,customer.module.info portal,model_customer_module_info,base.group_portal,1,0,0,0
+access_customer_module_info_manager,customer.module.info manager,model_customer_module_info,product_odoo_module.group_product_odoo_module_manager,1,1,1,1
+access_module_complexity_user,module.complexity user,model_module_complexity,base.group_user,1,0,0,0
+access_module_complexity_portal,module.complexity portal,model_module_complexity,base.group_portal,1,0,0,0
+access_module_complexity_manager,module.complexity manager,model_module_complexity,product_odoo_module.group_product_odoo_module_manager,1,1,1,1
+access_module_license_user,module.license user,model_module_license,base.group_user,1,0,0,0
+access_module_license_portal,module.license portal,model_module_license,base.group_portal,1,0,0,0
+access_module_license_manager,module.license manager,model_module_license,product_odoo_module.group_product_odoo_module_manager,1,1,1,1
+access_module_popularity_user,module.popularity user,model_module_popularity,base.group_user,1,0,0,0
+access_module_popularity_portal,module.popularity portal,model_module_popularity,base.group_portal,1,0,0,0
+access_module_popularity_manager,module.popularity manager,model_module_popularity,product_odoo_module.group_product_odoo_module_manager,1,1,1,1
+access_module_business_impact_user,module.business.impact user,model_module_business_impact,base.group_user,1,0,0,0
+access_module_business_impact_portal,module.business.impact portal,model_module_business_impact,base.group_portal,1,0,0,0
+access_module_business_impact_manager,module.business.impact manager,model_module_business_impact,product_odoo_module.group_product_odoo_module_manager,1,1,1,1
+access_module_source_type_user,module.source.type user,model_module_source_type,base.group_user,1,0,0,0
+access_module_source_type_portal,module.source.type portal,model_module_source_type,base.group_portal,1,0,0,0
+access_module_source_type_manager,module.source.type manager,model_module_source_type,product_odoo_module.group_product_odoo_module_manager,1,1,1,1

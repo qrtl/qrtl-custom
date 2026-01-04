@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <menuitem id="menu_product_odoo_module_root" name="Odoo Modules" sequence="50" />
+    <menuitem
+        id="menu_product_odoo_module_customers"
+        name="Customer Modules"
+        parent="menu_product_odoo_module_root"
+        sequence="10"
+        action="action_customer_module"
+    />
+    <menuitem
+        id="menu_product_odoo_module_variants"
+        name="Odoo Modules"
+        parent="menu_product_odoo_module_root"
+        sequence="20"
+        action="action_product_odoo_module_variants"
+    />
+    <menuitem
+        id="menu_product_odoo_module_templates"
+        name="Odoo Module Templates"
+        parent="menu_product_odoo_module_root"
+        sequence="30"
+        action="action_product_odoo_module_templates"
+    />
+    <menuitem
+        id="menu_product_odoo_module_settings"
+        name="Settings"
+        parent="menu_product_odoo_module_root"
+        sequence="90"
+    />
+    <menuitem
+        id="menu_module_business_impact"
+        name="Business Impacts"
+        parent="menu_product_odoo_module_settings"
+        action="module_business_impact_action"
+    />
+    <menuitem
+        id="menu_odoo_module_license"
+        name="Licenses"
+        parent="menu_product_odoo_module_settings"
+        action="odoo_module_license_action"
+    />
+</odoo>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="product_template_form_view" model="ir.ui.view">
+        <field name="name">product.template.form.view</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_form_view" />
+        <field name="arch" type="xml">
+            <xpath expr="//div[@name='button_box']" position="inside">
+                <button
+                    name="action_view_customer_modules"
+                    type="object"
+                    class="oe_stat_button"
+                    icon="fa-users"
+                    attrs="{'invisible': [('is_odoo_module', '=', False)]}"
+                >
+                    <field
+                        name="customer_module_count"
+                        widget="statinfo"
+                        string="Customers"
+                    />
+                </button>
+            </xpath>
+            <xpath expr="//page[@name='general_information']/group[1]" position="after">
+                <group
+                    name="odoo_module"
+                    string="Odoo Module"
+                    attrs="{'invisible': [('is_odoo_module', '=', False)]}"
+                >
+                    <field name="source_type_id" />
+                    <field name="module_license_id" />
+                    <field name="module_technical_name" />
+                    <field name="module_repo_url" />
+                    <field name="business_impact_id" />
+                    <field name="module_complexity_id" />
+                </group>
+            </xpath>
+            <xpath
+                expr="//page[@name='general_information']/group/group[@name='group_general']"
+                position="inside"
+            >
+                <field name="is_odoo_module" />
+            </xpath>
+        </field>
+    </record>
+</odoo>

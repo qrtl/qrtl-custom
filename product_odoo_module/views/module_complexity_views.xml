@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="view_module_complexity_tree" model="ir.ui.view">
+        <field name="name">module.complexity.tree</field>
+        <field name="model">module.complexity</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="sequence" widget="handle" />
+                <field name="name" />
+                <field name="factor" />
+            </tree>
+        </field>
+    </record>
+    <record id="view_module_complexity_form" model="ir.ui.view">
+        <field name="name">module.complexity.form</field>
+        <field name="model">module.complexity</field>
+        <field name="arch" type="xml">
+            <form string="Module Complexity">
+                <field name="active" invisible="1" />
+                <widget
+                    name="web_ribbon"
+                    title="Archived"
+                    bg_color="text-bg-danger"
+                    attrs="{'invisible': [('active', '=', True)]}"
+                />
+                <sheet>
+                    <group>
+                        <field name="name" />
+                        <field name="sequence" />
+                        <field name="factor" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="action_module_complexity" model="ir.actions.act_window">
+        <field name="name">Module Complexity</field>
+        <field name="res_model">module.complexity</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>

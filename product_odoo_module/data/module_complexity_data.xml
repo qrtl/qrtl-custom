@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo noupdate="1">
+    <record id="module_complexity_high" model="module.complexity">
+        <field name="name">High</field>
+        <field name="sequence">1</field>
+        <field name="factor">1.2</field>
+    </record>
+    <record id="module_complexity_medium" model="module.complexity">
+        <field name="name">Medium</field>
+        <field name="sequence">2</field>
+        <field name="factor">1.0</field>
+    </record>
+    <record id="module_complexity_low" model="module.complexity">
+        <field name="name">Low</field>
+        <field name="sequence">3</field>
+        <field name="factor">0.8</field>
+    </record>
+</odoo>
