@@ -2,10 +2,12 @@
 # License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl).
 {
     "name": "Account Analytic Group",
+    "summary": "Restore the Analytic Group feature removed from core in 16.0",
     "category": "Analytic",
     "license": "LGPL-3",
     "author": "Quartile",
     "website": "https://www.quartile.co",
+    "maintainers": ["AungKoKoLin1997"],
     "version": "19.0.1.0.0",
     "depends": ["account"],
     "data": [

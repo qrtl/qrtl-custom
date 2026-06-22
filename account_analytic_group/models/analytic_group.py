@@ -12,5 +12,4 @@ class AccountAnalyticGroup(models.Model):
     sequence = fields.Integer()
     name = fields.Char(required=True)
     description = fields.Text()
-    parent_path = fields.Char(index=True)
     company_id = fields.Many2one("res.company", string="Company")

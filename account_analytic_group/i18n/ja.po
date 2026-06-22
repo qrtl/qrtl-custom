@@ -94,11 +94,6 @@ msgid "Name"
 msgstr "名称"
 
 #. module: account_analytic_group
-#: model:ir.model.fields,field_description:account_analytic_group.field_account_analytic_group__parent_path
-msgid "Parent Path"
-msgstr "親パス"
-
-#. module: account_analytic_group
 #: model:ir.model.fields,field_description:account_analytic_group.field_account_analytic_group__sequence
 msgid "Sequence"
 msgstr "順序"
