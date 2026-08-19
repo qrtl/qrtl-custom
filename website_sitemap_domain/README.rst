@@ -75,6 +75,14 @@ Authors
 Maintainers
 -----------
 
+.. |maintainer-yostashiro| image:: https://github.com/yostashiro.png?size=40px
+    :target: https://github.com/yostashiro
+    :alt: yostashiro
+
+Current maintainer:
+
+|maintainer-yostashiro| 
+
 This module is part of the `qrtl/qrtl-custom <https://github.com/qrtl/qrtl-custom/tree/16.0/website_sitemap_domain>`_ project on GitHub.
 
 You are welcome to contribute.
