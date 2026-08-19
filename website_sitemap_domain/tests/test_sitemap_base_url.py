@@ -17,7 +17,7 @@ class TestSitemapBaseUrl(TransactionCase):
             "unexpected sitemap base URL for domain %r" % (domain,),
         )
 
-    def test_domain_is_used_verbatim(self):
+    def test_domain_becomes_the_base_url(self):
         self._assert_base_url("https://www.example.com", "https://www.example.com/")
 
     def test_trailing_slash_is_not_doubled(self):
