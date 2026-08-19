@@ -35,7 +35,8 @@ class TestSitemapRoute(HttpCase):
         """Every <loc> uses website.domain, whatever host asked for the sitemap."""
         self.website.domain = CANONICAL
         offenders = [
-            loc for loc in self._fetch_locs(FOREIGN_HOST)
+            loc
+            for loc in self._fetch_locs(FOREIGN_HOST)
             if not loc.startswith(CANONICAL + "/")
         ]
         self.assertFalse(
