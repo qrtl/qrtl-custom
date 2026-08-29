@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_server_server_user,server.server.user,model_server_server,base.group_user,1,0,0,0
+access_server_tag_user,server.tag.user,model_server_tag,base.group_user,1,0,0,0
+access_server_server_manager,server.server.manager,model_server_server,base.group_system,1,1,1,1
+access_server_tag_manager,server.tag.manager,model_server_tag,base.group_system,1,1,1,1
