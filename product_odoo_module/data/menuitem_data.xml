@@ -1,0 +1,8 @@
+<odoo>
+    <menuitem
+        id="menu_odoo_module_in_config_sales"
+        name="Odoo Modules"
+        parent="sale.menu_sales_config"
+        sequence="40"
+    />
+</odoo>
