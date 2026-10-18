@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="view_protected_attachment_tree" model="ir.ui.view">
+        <field name="name">view.protected.attachment.tree</field>
+        <field name="model">protected.attachment</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="attachment" widget="binary" filename="attachment_name" />
+            </tree>
+        </field>
+    </record>
+   <record id="action_protected_attachment" model="ir.actions.act_window">
+        <field name="name">Protected Attachment</field>
+        <field name="res_model">protected.attachment</field>
+    </record>
+    <menuitem
+        id="menu_protected_attachment"
+        name="Protected Attachment"
+        parent="base.menu_administration"
+        sequence="20"
+    />
+    <menuitem
+        id="menu_protected_attachment_model"
+        action="action_protected_attachment"
+        parent="menu_protected_attachment"
+        sequence="20"
+    />
+</odoo>
