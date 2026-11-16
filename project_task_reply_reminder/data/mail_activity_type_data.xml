@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo noupdate="1">
+    <record id="mail_activity_type_customer_reply" model="mail.activity.type">
+        <field name="name">Reply to Customer</field>
+        <field name="res_model">project.task</field>
+        <field name="icon">fa-reply</field>
+        <field name="delay_count">0</field>
+    </record>
+</odoo>

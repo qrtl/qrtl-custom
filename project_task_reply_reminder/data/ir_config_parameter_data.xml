@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo noupdate="1">
+    <record id="reply_reminder_hours" model="ir.config_parameter">
+        <field name="key">project_task_reply_reminder.hours</field>
+        <field name="value">8</field>
+    </record>
+</odoo>
