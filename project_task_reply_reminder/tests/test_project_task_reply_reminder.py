@@ -48,11 +48,11 @@ class TestProjectTaskReplyReminder(TransactionCase):
             "project_task_reply_reminder.mail_activity_type_customer_reply"
         )
 
-    def _post(self, author, subtype_xmlid="mail.mt_comment"):
+    def _post(self, author, subtype_xmlid="mail.mt_comment", message_type="comment"):
         self.task.sudo().message_post(
             body="Message",
             author_id=author.id,
-            message_type="comment",
+            message_type=message_type,
             subtype_xmlid=subtype_xmlid,
         )
 
@@ -86,6 +86,15 @@ class TestProjectTaskReplyReminder(TransactionCase):
         self.assertTrue(self._reminders())
         self._post(self.member.partner_id)
         self.assertFalse(self._reminders())
+        self.assertFalse(self.task.customer_reply_pending_since)
+
+    def test_odoobot_notification_does_not_start_clock(self):
+        """OdooBot has no active user, so its notifications must not pass for a customer."""
+        self._post(
+            self.env.ref("base.partner_root"),
+            subtype_xmlid="project.mt_task_new",
+            message_type="notification",
+        )
         self.assertFalse(self.task.customer_reply_pending_since)
 
     def test_leave_reply_stage_clears(self):
